@@ -17,7 +17,9 @@
 
     <mappers>
         <!--<mapper resource="mybatis/UserMapper.xml"/>-->
-        <mapper class="com.mybatis.mapper.UserMapper"></mapper>
+        <!--<mapper class="com.mybatis.mapper.UserMapper"></mapper>-->
+
+        <package name="com.mybatis.mapper"/>
     </mappers>
 
 </configuration>

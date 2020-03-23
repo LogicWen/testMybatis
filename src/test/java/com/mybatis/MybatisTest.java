@@ -3,7 +3,6 @@ package com.mybatis;
 
 import com.mybatis.mapper.UserMapper;
 import com.mybatis.pojo.User;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -42,8 +41,8 @@ public class MybatisTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //User user = sqlSession.selectOne("com.jiagouedu.mybatis.UserMapper.selectUser", 1);
-        User user = userMapper.selectUser(3);//查出来的结果是一样
+        User user = userMapper.selectByPrimaryKey(3L);//查出来的结果是一样
         logger.info("+++++++");
-        logger.info(user);
+        logger.info(user.getUsername());
     }
 }

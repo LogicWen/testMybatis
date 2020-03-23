@@ -1,18 +1,25 @@
 package com.mybatis.pojo;
 
-public class User {
+import java.io.Serializable;
 
-    private Integer id;
+public class User implements Serializable {
+    private Long id;
+
     private String username;
+
     private Integer age;
-    private String phone;
+
+    private Long phone;
+
     private String desc;
 
-    public Integer getId() {
+    private static final long serialVersionUID = 1L;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -21,7 +28,7 @@ public class User {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username == null ? null : username.trim();
     }
 
     public Integer getAge() {
@@ -32,11 +39,11 @@ public class User {
         this.age = age;
     }
 
-    public String getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
@@ -45,8 +52,6 @@ public class User {
     }
 
     public void setDesc(String desc) {
-        this.desc = desc;
+        this.desc = desc == null ? null : desc.trim();
     }
-
-
 }
